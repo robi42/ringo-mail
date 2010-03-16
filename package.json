@@ -1,0 +1,6 @@
+{
+    "author": "Robert Thurnher (http://robert42.com/) <r.thurnher@gmail.com>",
+    "lib": "modules",
+    "jars": "lib/mail-1.4.3.jar",
+    "version": "0.1.0"
+}
