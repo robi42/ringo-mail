@@ -19,6 +19,7 @@ exports.sendMail = function (data) {
     try {
         props.put('mail.transport.protocol', 'smtp');
         props.put('mail.smtp.host', data.host || 'localhost');
+        props.put('mail.smtp.auth', data.user && data.password);
         props.put('mail.smtp.port', String(data.port || 25));
         props.put('mail.smtp.starttls.enable', 'false'); // TODO: support TLS.
         props.put('mail.mime.charset', 'UTF-8');
@@ -40,7 +41,11 @@ exports.sendMail = function (data) {
         message.setText(data.text || ''); // Enable "empty" content.
         message.setSentDate(new Date());
         transport = session.getTransport('smtp');
-        transport.connect();
+        if (data.user && data.password) {
+            transport.connect(data.user, data.password);
+        } else {
+            transport.connect();
+        }
         message.saveChanges();
         transport.sendMessage(message, message.getAllRecipients());
         log.info('Sent mail with following data:', JSON.stringify(data));
