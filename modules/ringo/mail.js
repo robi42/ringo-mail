@@ -14,7 +14,7 @@ const NO_REPLY = 'no-reply@example.com';
  *
  * @param {Object} data the data of mail to send
  */
-exports.sendMail = function (data) {
+exports.send = function(data) {
     var transport, message, session, props = new Properties();
     try {
         props.put('mail.transport.protocol', 'smtp');
