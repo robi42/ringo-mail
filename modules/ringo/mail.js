@@ -23,7 +23,7 @@ exports.send = function(data) {
         props.put('mail.smtp.starttls.enable', 'false'); // TODO: support TLS.
         props.put('mail.mime.charset', 'UTF-8');
         session = Session.getInstance(props);
-        message = new MimeMessage(session); // Enable skipping data.from.
+        message = new MimeMessage(session);
         message.setFrom(new InternetAddress(data.from));
         if (data.to instanceof Array) { // Enable multiple recipients.
             for each (let recipient in data.to) {
