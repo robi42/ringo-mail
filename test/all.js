@@ -7,10 +7,9 @@ const TEXT = 'Hi!\n\nThis is some text.\n\nCheers, Tester';
 
 exports.testSendMail = function () {
     mail.send({from: ADDRESS1, to: ADDRESS2, subject: SUBJECT, text: TEXT});
-    mail.send({to: ADDRESS2, subject: SUBJECT, text: TEXT});
     mail.send({from: ADDRESS1, to: ADDRESS2, text: TEXT});
     mail.send({from: ADDRESS1, to: ADDRESS2, subject: SUBJECT});
-    mail.send({to: ADDRESS2}); // Testing different input options.
+    mail.send({from: ADDRESS1, to: ADDRESS2}); // Testing various input options.
 };
 
 if (require.main == module.id) {
