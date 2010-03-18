@@ -7,7 +7,6 @@ importPackage(javax.mail.internet);
 importClass(java.util.Properties);
 
 var log = require('ringo/logging').getLogger(module.id);
-const NO_REPLY = 'no-reply@example.com';
 
 /**
  * Does the actual job of sending mail.
@@ -25,7 +24,7 @@ exports.send = function(data) {
         props.put('mail.mime.charset', 'UTF-8');
         session = Session.getInstance(props);
         message = new MimeMessage(session); // Enable skipping data.from.
-        message.setFrom(new InternetAddress(data.from || NO_REPLY));
+        message.setFrom(new InternetAddress(data.from));
         if (data.to instanceof Array) { // Enable multiple recipients.
             for each (var recipient in data.to) {
                 message.addRecipient(Message.RecipientType.TO,
