@@ -26,7 +26,7 @@ exports.send = function(data) {
         message = new MimeMessage(session); // Enable skipping data.from.
         message.setFrom(new InternetAddress(data.from));
         if (data.to instanceof Array) { // Enable multiple recipients.
-            for each (var recipient in data.to) {
+            for each (let recipient in data.to) {
                 message.addRecipient(Message.RecipientType.TO,
                         new InternetAddress(recipient));
             }
