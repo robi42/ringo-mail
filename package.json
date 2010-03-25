@@ -7,6 +7,5 @@
     "contributors": [
             "Christian Langreiter (http://www.langreiter.com/)"
     ],
-    "lib": "lib",
     "jars": "jars/mail-1.4.3.jar"
 }
