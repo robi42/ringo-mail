@@ -1,6 +1,6 @@
 var mail = require('ringo/mail');
 
-const ADDRESS_1 = 'hannes@helma.at';
+const ADDRESS_1 = 'no-reply@example.com';
 const ADDRESS_2 = 'ringojs@mailinator.com';
 const ADDRESS_3 = 'commonjs@mailinator.com';
 const SUBJECT = '[Foo] Bar';
