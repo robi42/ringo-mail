@@ -33,5 +33,5 @@ exports._testAuthAndTlsEncryption = function () {
 };
 
 if (require.main == module) {
-    require('ringo/unittest').run(exports);
+    require('test').run(exports);
 }
