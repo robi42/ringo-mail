@@ -7,9 +7,11 @@ const GMAIL_ADDRESS = 'CHANGE_ME';
 const GMAIL_PASSWORD = 'CHANGE_ME';
 const SUBJECT = '[Foo] Bar';
 const TEXT = 'Hi!\n\nThis is some text.\n\nCheers, Tester';
+const HTML = '<p>Hi!</p><p>This is some text.</p><p><em>Cheers, Tester</em></p>';
 
 exports.testSendingMailWithVariousInputOptions = function () {
     mail.send({from: ADDRESS_1, to: ADDRESS_2, subject: SUBJECT, text: TEXT});
+    mail.send({from: ADDRESS_1, to: ADDRESS_2, subject: SUBJECT, html: HTML});
     mail.send({from: ADDRESS_1, to: ADDRESS_2, text: TEXT});
     mail.send({from: ADDRESS_1, to: ADDRESS_2, subject: SUBJECT});
     mail.send({from: ADDRESS_1, to: [ADDRESS_2, ADDRESS_3]});
