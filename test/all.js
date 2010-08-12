@@ -1,13 +1,13 @@
 var mail = require('ringo/mail');
 
-const ADDRESS_1 = 'no-reply@example.com';
-const ADDRESS_2 = 'ringojs@mailinator.com';
-const ADDRESS_3 = 'commonjs@mailinator.com';
-const GMAIL_ADDRESS = 'CHANGE_ME';
-const GMAIL_PASSWORD = 'CHANGE_ME';
-const SUBJECT = '[Foo] Bar';
-const TEXT = 'Hi!\n\nThis is some text.\n\nCheers, Tester';
-const HTML = '<p>Hi!</p><p>This is some text.</p><p><em>Cheers, Tester</em></p>';
+const ADDRESS_1 = 'no-reply@example.com',
+    ADDRESS_2 = 'ringojs@mailinator.com',
+    ADDRESS_3 = 'commonjs@mailinator.com',
+    GMAIL_ADDRESS = 'CHANGE_ME',
+    GMAIL_PASSWORD = 'CHANGE_ME',
+    SUBJECT = '[Foo] Bar',
+    TEXT = 'Hi!\n\nThis is some text.\n\nCheers, Tester',
+    HTML = '<h1>Hi!</h1><p>This is some text.</p><p><em>Cheers, Tester</em></p>';
 
 exports.testSendingMailWithVariousInputOptions = function () {
     mail.send({from: ADDRESS_1, to: ADDRESS_2, subject: SUBJECT, text: TEXT});
