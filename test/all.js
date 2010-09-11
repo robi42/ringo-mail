@@ -7,7 +7,8 @@ const ADDRESS_1 = 'jdoe@example.com',
     GMAIL_PASSWORD = 'CHANGE_ME',
     SUBJECT = '[Foo] Bar',
     TEXT = 'Hi!\n\nThis is some text.\n\nCheers, Tester',
-    HTML = '<h1>Hi!</h1><p>This is some text.</p><p><em>Cheers, Tester</em></p>';
+    HTML = '<h1>Hi!</h1><p>This is some text.</p><p><em>Cheers, Tester</em></p>',
+    ATTACHMENT = module.directory + 'mangatar.jpg';
 
 exports.testSendingMailWithVariousInputOptions = function () {
     mail.send({to: ADDRESS_2, subject: SUBJECT, text: TEXT});
@@ -23,6 +24,8 @@ exports.testSendingMailWithVariousInputOptions = function () {
     mail.send({to: ADDRESS_2, replyTo: [ADDRESS_1, ADDRESS_3]});
     mail.send({from: ADDRESS_1, to: ADDRESS_2, headers:
             {'Content-Language': 'en', Keywords: 'ringojs, javax.mail'}});
+    mail.send({from: ADDRESS_1, to: ADDRESS_2, attachments: ATTACHMENT});
+    mail.send({to: ADDRESS_2, attachments: [ATTACHMENT, ATTACHMENT]});
     mail.send({from: ADDRESS_1, to: ADDRESS_2});
 };
 
