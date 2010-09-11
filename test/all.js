@@ -1,7 +1,7 @@
 var mail = require('ringo/mail');
 
-const ADDRESS_1 = 'jdoe@example.com',
-    ADDRESS_2 = 'ringojs@mailinator.com',
+const ADDRESS_1 = 'John Doe <jdoe@example.com>',
+    ADDRESS_2 = 'RingoJS <ringojs@mailinator.com>',
     ADDRESS_3 = 'commonjs@mailinator.com',
     GMAIL_ADDRESS = 'CHANGE_ME',
     GMAIL_PASSWORD = 'CHANGE_ME',
@@ -11,11 +11,11 @@ const ADDRESS_1 = 'jdoe@example.com',
     ATTACHMENT = module.directory + 'mangatar.jpg';
 
 exports.testSendingMailWithVariousInputOptions = function () {
-    mail.send({to: ADDRESS_2, subject: SUBJECT, text: TEXT});
-    mail.send({to: ADDRESS_2, subject: SUBJECT, html: HTML});
+    mail.send({from: ADDRESS_1, to: ADDRESS_2, subject: SUBJECT, text: TEXT});
+    mail.send({from: ADDRESS_1, to: ADDRESS_2, subject: SUBJECT, html: HTML});
     mail.send({to: ADDRESS_2, text: TEXT});
     mail.send({to: ADDRESS_2, subject: SUBJECT});
-    mail.send({to: [ADDRESS_2, ADDRESS_3]});
+    mail.send({from: ADDRESS_1, to: [ADDRESS_2, ADDRESS_3]});
     mail.send({to: ADDRESS_2, cc: ADDRESS_3});
     mail.send({to: ADDRESS_2, cc: [ADDRESS_3, ADDRESS_1]});
     mail.send({to: ADDRESS_2, bcc: ADDRESS_3});
