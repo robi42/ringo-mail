@@ -16,7 +16,7 @@ Note the two supported mail address syntaxes above (so incl. "personal name").
 
 To send to multiple recipients simply use an array:
 
-  mail.send({to: ['alice@example.com', 'bob@example.com']});
+    mail.send({to: ['alice@example.com', 'bob@example.com']});
 
 BTW, if `from`'s omitted `javax.mail`'s [fallback] mechanism is used.
 
