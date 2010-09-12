@@ -1,10 +1,11 @@
 # Ringo Mail
 
 * This package provides a simple interface to `javax.mail` for sending email via [RingoJS].
-* Its xUnit [tests] cover/show API usage (well, `mail#send` :) ).
+* Its xUnit [tests] cover/show API usage (well, `mail#send`... ;) ).
+* Main module is equipped with JsDoc and some further documentation's below.
 * TODOs and bugs go up on corresponding GitHub [issue tracker].
 
-## Usage
+## Usage Examples
 
 Sending an email is as simple as:
 
