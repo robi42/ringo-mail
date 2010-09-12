@@ -20,6 +20,10 @@ To send to multiple recipients simply use an array:
 
 BTW, if `from`'s omitted `javax.mail`'s [fallback] mechanism is used.
 
+Setting the subject (defaults to being empty if omitted):
+
+    mail.send({to: 'hugo@example.com', subject: '[FTW] Ohai'});
+
 So, to actually send some text:
 
     mail.send({from: 'jdoe@example.com', to: 'hugo@example.com', text: 'Hi'});
