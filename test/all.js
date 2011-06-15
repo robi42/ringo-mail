@@ -10,7 +10,7 @@ const ADDRESS_1 = 'John Doe <jdoe@example.com>',
     HTML = '<h1>Hi!</h1><p>This is some text.</p><p><em>Cheers, Tester</em></p>',
     ATTACHMENT = module.directory + '/mangatar.jpg';
 
-mail.config(module.directory + '/config');
+mail.config(module.directory + 'config');
 
 exports.testSendingMailWithVariousInputOptions = function () {
     mail.send({from: ADDRESS_1, to: ADDRESS_2, subject: SUBJECT, text: TEXT});
