@@ -8,7 +8,7 @@ const ADDRESS_1 = 'John Doe <jdoe@example.com>',
     SUBJECT = '[Foo] Bar',
     TEXT = 'Hi!\n\nThis is some text.\n\nCheers, Tester',
     HTML = '<h1>Hi!</h1><p>This is some text.</p><p><em>Cheers, Tester</em></p>',
-    ATTACHMENT = module.directory + '/mangatar.jpg';
+    ATTACHMENT = module.directory + 'mangatar.jpg';
 
 mail.config(module.directory + 'config');
 
