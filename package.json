@@ -1,6 +1,6 @@
 {
     "name": "ringo-mail",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "description": "Provides a simple interface to javax.mail for sending email.",
     "keywords": ["mail", "rhino", "ringo"],
     "author": "Robert Thurnher (http://robert42.com/) <r.thurnher@gmail.com>",
@@ -8,5 +8,5 @@
             "Christian Langreiter (http://www.langreiter.com/)",
             "Emilis Dambauskas (http://emilis.info/)"
     ],
-    "jars": "jars/mail-1.4.3.jar"
+    "main": "lib/main.js"
 }

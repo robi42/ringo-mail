@@ -1,4 +1,4 @@
-var mail = require('ringo/mail');
+var mail = require('ringo-mail');
 
 const ADDRESS_1 = 'John Doe <jdoe@example.com>',
     ADDRESS_2 = 'RingoJS <ringojs@mailinator.com>',
@@ -8,7 +8,9 @@ const ADDRESS_1 = 'John Doe <jdoe@example.com>',
     SUBJECT = '[Foo] Bar',
     TEXT = 'Hi!\n\nThis is some text.\n\nCheers, Tester',
     HTML = '<h1>Hi!</h1><p>This is some text.</p><p><em>Cheers, Tester</em></p>',
-    ATTACHMENT = module.resolve('mangatar.jpg');
+    ATTACHMENT = module.directory + '/mangatar.jpg';
+
+mail.config(module.directory + '/config');
 
 exports.testSendingMailWithVariousInputOptions = function () {
     mail.send({from: ADDRESS_1, to: ADDRESS_2, subject: SUBJECT, text: TEXT});
